@@ -26,4 +26,6 @@ let talent_data =
 
 
 
-console.log(filterByLocation(talent_data, 'Springfield'))
+for (talent of filterByLocation(talent_data, 'Springfield')) {
+    console.log(talent)
+}
