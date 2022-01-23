@@ -1,0 +1,11 @@
+{
+  "name": "contact-technical-test",
+  "version": "1.0.0",
+  "description": "Simple program that reads a JSON object and filters out people by a given location.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC"
+}
