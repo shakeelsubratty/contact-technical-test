@@ -1,6 +1,7 @@
-const filterByLocation = require('./src/filterByLocation')
+const filterByLocation = require('../filterByLocation')
 
-let talent_data = 
+test('should filter by Springfield to return Homer and Krusty', () => {
+    let talent_data = 
     [
         {
           "name": "Homer Simpson",
@@ -23,7 +24,5 @@ let talent_data =
             "date_of_birth": "1957-10-29"
         }
     ]
-
-
-
-console.log(filterByLocation(talent_data, 'Springfield'))
+    expect(filterByLocation(talent_data, 'Springfield')).toStrictEqual(["Homer Simpson", "Krusty the Clown"])
+})
