@@ -104,13 +104,33 @@ test('should attempt to filter by Springfield and throw exception for missing fi
     expect(() => filterByLocation(talent_data, 'Springfield')).toThrow('Filtered talent is missing name.')
 })
 
-test('should raise execption on passed in object', () => {
-  let talent_data = {
-    "name": "Frank Reynolds",
-    "location": "Philidelphia",
-    "date_of_birth": "1944-11-17"
-  }
-  expect(() => filterByLocation(talent_data, 'Springfield')).toThrow('Expected array of objects, recieved object.')
+test('should take empty talent data object and return empty array', () => {
+  expect(filterByLocation([], "London")).toStrictEqual([])
+});
+
+test('should take empty location string and return empty array', () => {
+  let talent_data = 
+    [
+        {
+            "location": "Springfield",
+            "date_of_birth": "1956-05-12"
+          },
+          {
+            "name": "Frank Reynolds",
+            "location": "Philidelphia",
+            "date_of_birth": "1944-11-17"
+          },
+          {
+            "location": "Los Angeles",
+            "date_of_birth": "1980-03-19"
+          },
+          {
+            "name": "Krusty the Clown",
+            "location": "SpringField",
+              "date_of_birth": "1957-10-29"
+          }
+    ]
+  expect(filterByLocation(talent_data, "")).toStrictEqual([])
 });
 
 
