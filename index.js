@@ -1,3 +1,5 @@
+const filterByLocation = require('./src/filterByLocation')
+
 let talent_data = 
     [
         {
@@ -22,12 +24,8 @@ let talent_data =
         }
     ]
 
-let filter_by_location = (data, location) => {
-    for (let talent of data) {
-        if (talent['location'].toLowerCase() == location.toLowerCase()) {
-            console.log(talent['name'])
-        }
-    }
-}
 
-filter_by_location(talent_data, 'Springfield')
+
+for (talent of filterByLocation(talent_data, 'Springfield')) {
+    console.log(talent)
+}

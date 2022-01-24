@@ -4,8 +4,11 @@
   "description": "Simple program that reads a JSON object and filters out people by a given location.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
 }
