@@ -79,7 +79,7 @@ test('should attempt to filter by Toronto, and return empty array.', () => {
     expect(filterByLocation(talent_data, 'Toronto')).toStrictEqual([])
 })
 
-test('should attempt to filter by Springfield and return Krusty, handling missing names.', () => {
+test('should attempt to filter by Springfield and throw exception for missing filtered entry name.', () => {
     let talent_data = 
     [
         {
@@ -103,3 +103,14 @@ test('should attempt to filter by Springfield and return Krusty, handling missin
     ]
     expect(() => filterByLocation(talent_data, 'Springfield')).toThrow('Filtered talent is missing name.')
 })
+
+test('should raise execption on passed in object', () => {
+  let talent_data = {
+    "name": "Frank Reynolds",
+    "location": "Philidelphia",
+    "date_of_birth": "1944-11-17"
+  }
+  expect(() => filterByLocation(talent_data, 'Springfield')).toThrow('Expected array of objects, recieved object.')
+});
+
+
